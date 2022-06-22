@@ -1,0 +1,37 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pagination i {
+  font-size: 20px;
+  font-weight: bold;
+  color: #191919;
+}
+
+.pagination h2{
+    color: #fff;
+}
+
+.angle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #CF112B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.angle:hover{
+    background-color: #6e0513;
+}

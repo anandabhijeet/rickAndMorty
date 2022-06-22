@@ -1,0 +1,31 @@
+.App {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../src/assets/964018.jpg");
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;}
+
+
+
+.app-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ 
+}
+
+.app-container h1{
+  color: antiquewhite;
+}
+
+.button-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,0 +1,46 @@
+        .navbar{
+            background-color: #CF112B;
+        }
+
+        .inputGroup{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid red;
+        }
+
+        .ckecks{
+            border: 1px solid blue;
+        }
+
+        .ckecks-text{
+            border: 1px solid green;
+        }
+
+        .favourite-button{
+            margin-top: 5px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            border-radius: 5px;
+           
+            
+    
+        }
+
+        .favourite-button :hover{
+            border: 1px solid rgba(255, 255, 255, 0.555);
+            padding: 3px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.111);
+        }
+        
+        .favourite-button p{
+            color: rgba(255, 255, 255, 0.501);
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+      
