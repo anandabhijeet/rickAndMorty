@@ -43,4 +43,15 @@
             cursor: pointer;
         }
 
+        .custom-select{
+            background-color: transparent;
+            box-shadow: none;
+            
+            
+        }
+
+        .select-heading{
+            color: rgba(255, 255, 255, 0.503);
+        }
+
       

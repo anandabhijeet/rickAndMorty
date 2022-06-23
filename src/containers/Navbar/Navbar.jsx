@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { searchedCharacters, setGender, setSpecies, setStatus, setType } from "../../Redux/Actions/Action";
 import "./Navbar.css";
 
-const Navbar = ({ setSearch, setStatus, setSpecies, setType, setGender }) => {
+const Navbar = () => {
+  const dispatch = useDispatch();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top mb-4">
       <a className="navbar-brand" href="#">
@@ -21,269 +24,75 @@ const Navbar = ({ setSearch, setStatus, setSpecies, setType, setGender }) => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto ml-auto">
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
+          <li className="nav-item ml-2">
+            <select
+              className=" custom-select"
+              onChange={(e) => {
+                dispatch(setStatus(e.target.value))
+              }}
             >
-              Status
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div class="form-check dropdown-item ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios1"
-                  value="dead"
-                  onChange={(e)=>setStatus(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios1">
-                  Dead
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="alive"
-                  onChange={(e)=>setStatus(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Alive
-                </label>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="unknown"
-                  onChange={(e)=>setStatus(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Unknown
-                </label>
-              </div>
-            </div>
+              <option className="d-none">Status</option>
+              <option value="alive">Alive</option>
+              <option value="dead">Dead</option>
+              <option value="unknown">Unknown</option>
+            </select>
           </li>
 
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
+          <li className="nav-item ml-2">
+            <select
+              className=" custom-select"
+              onChange={(e) => {
+                dispatch(setSpecies(e.target.value))
+              }}
             >
-              Species
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Alien"
-                  onChange={(e)=>setSpecies(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Alien
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Human"
-                  onChange={(e)=>setSpecies(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Human
-                </label>
-              </div>
-              
-            </div>
+              <option className="d-none">Species</option>
+              <option value="Human">Human</option>
+              <option value="Alien">Alien</option>
+            </select>
+          </li>
+          <li className="nav-item ml-2">
+            <select
+              className=" custom-select"
+              onChange={(e) => {
+                dispatch(setType(e.target.value))
+              }}
+            >
+              <option className="d-none">Type</option>
+              <option value="Genetic experiment">Genetic experiment</option>
+              <option value="Superhuman (Ghost trains summoner)">Superhuman (Ghost trains summoner)</option>
+              <option value="Parasite">Parasite</option>
+              <option value="Human with antennae">Human with antennae</option>
+              <option value="Human with ants in his eyes">Human with ants in his eyes</option>
+              <option value="Mytholog">Mytholog</option>
+              <option value="Bepisian">Bepisian</option>
+              <option value="unknown">Unknown</option>
+            </select>
           </li>
 
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
+          <li className="nav-item ml-2">
+            <select
+              className=" custom-select"
+              onChange={(e) => {
+                dispatch(setGender(e.target.value))
+              }}
             >
-              Type
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Genetic experiment"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Gentic Experiment
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Superhuman"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  SuperHuman
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Parasite"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Parasite
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Mytholog"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Mythology
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Human with antennae"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Human with antenna
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="Human with ants in his eyes"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Human with ant in his eyes
-                </label>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="unknown"
-                  onChange={(e)=>setType(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Other
-                </label>
-              </div>
-            </div>
-          </li>
+              <option className="d-none">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="unknown">Unkown</option>
+            </select>
+          </li> 
 
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Gender
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="female"
-                  onChange={(e)=>setGender(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Female
-                </label>
-              </div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="male"
-                  onChange={(e)=>setGender(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Male
-                </label>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div class="form-check dropdown-item  ml-2">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="unknown"
-                  onChange={(e)=>setGender(e.target.value)}
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Unknown
-                </label>
-               
-              </div>
-            </div>
+          <li className="nav-item ml-2">
+            <button type="button" className="btn btn-outline-light">
+            <i className="fa fa-heart"></i>
+            </button>
           </li>
-
-          <div className="favourite-button ml-1">
-            <p className="my-0">favourites</p>
-          </div>
+          <li className="nav-item ml-2">
+            <button type="button" className="btn btn-outline-light">
+            <i className="fa fa-refresh"></i>
+            </button>
+          </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
           <input
@@ -292,7 +101,7 @@ const Navbar = ({ setSearch, setStatus, setSpecies, setType, setGender }) => {
             placeholder="Search"
             aria-label="Search"
             onChange={(e) => {
-              setSearch(e.target.value);
+              dispatch(searchedCharacters(e.target.value));
             }}
           />
           <button className="btn btn-outline-light my-2 my-sm-0" type="submit">
