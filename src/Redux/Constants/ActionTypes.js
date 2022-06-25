@@ -6,5 +6,7 @@ export const actionTypes = {
     SET_STATUS: "SET_STATUS",
     SET_GENDER: "SET_GENDER",
     SET_SPECIES: "SET_SPECIES",
-    SET_TYPE: "SET_TYPE"
+    SET_TYPE: "SET_TYPE",
+    ADD_TO_FAV: "ADD_TO_FAV",
+    REMOVE_FROM_FAV: "REMOVE_FROM_FAV"
 }

@@ -53,3 +53,17 @@ export const setSpecies = (species) =>{
         payload: species
     }
 }
+
+export const addToFav = (data) => {
+    return {
+        type: actionTypes.ADD_TO_FAV,
+        payload: data
+    }
+}
+
+export const removeFromFav = (id) => {
+    return {
+        type: actionTypes.REMOVE_FROM_FAV,
+        payload: id
+    }
+}

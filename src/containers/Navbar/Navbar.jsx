@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { searchedCharacters, setGender, setSpecies, setStatus, setType } from "../../Redux/Actions/Action";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -83,11 +84,11 @@ const Navbar = () => {
             </select>
           </li> 
 
-          <li className="nav-item ml-2">
+         <Link to={'./favourite'}> <li className="nav-item ml-2">
             <button type="button" className="btn btn-outline-light">
             <i className="fa fa-heart"></i>
             </button>
-          </li>
+          </li></Link>
           <li className="nav-item ml-2">
             <button type="button" className="btn btn-outline-light">
             <i className="fa fa-refresh"></i>

@@ -1,8 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Tilt from "react-tilt";
+import { addToFav, removeFromFav } from "../../Redux/Actions/Action";
 import "./Card.css";
-const Card = ({ image, name, status, species, gender, type }) => {
-    const [like, setLike] = useState(false);
+const Card = (character) => {
+  const { id, image, name, status, species, gender, type } = character.character; 
+  console.log("data",character)
+  const [like, setLike] = useState(false);
+  const dispatch = useDispatch();
+
+  const add_to_Fav = () => {
+    dispatch(addToFav(character.character))
+    console.log("addtofav");
+    setLike(true);
+  };
+
+  const remove_fromFav = () => {
+    dispatch(removeFromFav(id));
+    setLike(false);
+  };
   return (
     <Tilt>
       <div className="Card">
@@ -16,14 +32,17 @@ const Card = ({ image, name, status, species, gender, type }) => {
             {gender === "Male"
               ? `He is ${species} and ${status}`
               : `She is ${species} and ${status}`}
-          </p> 
-          
+          </p>
+
           <div className="favourite">
-            <i className={like?"fa fa-heart like-button":"fa fa-heart"} onClick={()=>{
-                like?setLike(false):setLike(true)
-            }}></i>
+            <i
+              className={like ? "fa fa-heart like-button" : "fa fa-heart"}
+              onClick={() => {
+                console.log("heart");
+                like ? remove_fromFav() : add_to_Fav();
+              }}
+            ></i>
           </div>
-         
         </div>
         <p>Type : {type}</p>
       </div>

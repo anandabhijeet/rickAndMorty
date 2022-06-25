@@ -73,5 +73,20 @@ export const filter_type = (state = "", {type, payload})=>{
             return state;
     }
 }
-   
 
+const favChar = {
+    favouriteChars: []
+}
+
+export const favourites = (state = favChar, {type, payload})=>{
+    switch (type) {
+        case actionTypes.ADD_TO_FAV:
+            console.log("payload", payload);
+            return{...state, favouriteChars:[...state.favouriteChars, payload] }
+        case actionTypes.REMOVE_FROM_FAV:
+            return{...state, favouriteChars:state.favouriteChars.filter(char=>char.id !== payload)}
+    
+        default:
+            return state;
+    }
+}
