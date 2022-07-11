@@ -3,25 +3,30 @@
   padding: 0px;
   width: 100%;
   min-height: 100vh;
+ 
+}
+
+
+
+.app-container{
+ 
+  min-height: 70vh; 
   background-image: url("../src/assets/964018.jpg");
   
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;}
-
-
-
-.app-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; 
-  min-height: 61vh;
- 
+  background-size: cover;
 }
 
 .app-container h1{
   color: antiquewhite;
+}
+
+.app-body-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
 }
 
 .button-section{
@@ -30,3 +35,26 @@
   justify-content: center;
 }
 
+.tabs{
+ 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: azure;
+  width: 100%;
+  
+}
+
+.tabs-option{
+  margin: 0px 10px 0px 10px;
+}
+
+.tabs-option-color{
+  color: #CF112B;
+}
+
+.favourite-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

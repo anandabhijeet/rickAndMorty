@@ -8,5 +8,7 @@ export const actionTypes = {
     SET_SPECIES: "SET_SPECIES",
     SET_TYPE: "SET_TYPE",
     ADD_TO_FAV: "ADD_TO_FAV",
-    REMOVE_FROM_FAV: "REMOVE_FROM_FAV"
+    REMOVE_FROM_FAV: "REMOVE_FROM_FAV",
+    IS_FAV: "IS_FAV",
+    IS_NOT_FAV: "IS_NOT_FAV"
 }

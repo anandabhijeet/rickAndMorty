@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { charactersReducer, changePageNumber, search_Characters, filter_status, filter_type, filter_species, filter_gender, favourites } from "./EventReducers";
+import { charactersReducer, changePageNumber, search_Characters, filter_status, filter_type, filter_species, filter_gender, favourites, setFav } from "./EventReducers";
 
 const rootReducer = combineReducers({
     allCharacter: charactersReducer,
@@ -9,7 +9,8 @@ const rootReducer = combineReducers({
     filterTyp: filter_type,
     filterSpe: filter_species,
     filterGen: filter_gender,
-    favourites: favourites
+    favourites: favourites,
+    setFav: setFav
 })
 
 export default rootReducer;

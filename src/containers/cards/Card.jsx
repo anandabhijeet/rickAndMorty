@@ -1,22 +1,37 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Tilt from "react-tilt";
-import { addToFav, removeFromFav } from "../../Redux/Actions/Action";
+import { addToFav, isFav, isNotFav, removeFromFav } from "../../Redux/Actions/Action";
 import "./Card.css";
 const Card = (character) => {
   const { id, image, name, status, species, gender, type } = character.character; 
-  console.log("data",character)
-  const [like, setLike] = useState(false);
-  const dispatch = useDispatch();
+  const is_Fav = useSelector(state=>state.favourites.favouriteChars);
+  const inFav = is_Fav.findIndex(el=>el.id === id);
+  let isFav = true;
 
+  if(inFav === -1){isFav = false};
+  const [like, setLike] = useState(isFav);
+  
+  console.log("fav",is_Fav);
+  const dispatch = useDispatch();
+  
+  const checkFavourite =()=>{
+    //
+    // if(inFav){setLike(true)}
+    
+  }
+
+  
   const add_to_Fav = () => {
-    dispatch(addToFav(character.character))
-    console.log("addtofav");
+    dispatch(addToFav(character.character));
+   
     setLike(true);
   };
 
   const remove_fromFav = () => {
     dispatch(removeFromFav(id));
+   
     setLike(false);
   };
   return (
@@ -36,7 +51,7 @@ const Card = (character) => {
 
           <div className="favourite">
             <i
-              className={like ? "fa fa-heart like-button" : "fa fa-heart"}
+              className={like? "fa fa-heart like-button" : "fa fa-heart"}
               onClick={() => {
                 console.log("heart");
                 like ? remove_fromFav() : add_to_Fav();

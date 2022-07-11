@@ -84,11 +84,7 @@ const Navbar = () => {
             </select>
           </li> 
 
-         <Link to={'./favourite'}> <li className="nav-item ml-2">
-            <button type="button" className="btn btn-outline-light">
-            <i className="fa fa-heart"></i>
-            </button>
-          </li></Link>
+         
           <li className="nav-item ml-2">
             <button type="button" className="btn btn-outline-light">
             <i className="fa fa-refresh"></i>

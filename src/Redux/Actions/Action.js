@@ -67,3 +67,15 @@ export const removeFromFav = (id) => {
         payload: id
     }
 }
+
+export const isFav = ()=>{
+    return {
+        type: actionTypes.IS_FAV
+    }
+}
+
+export const isNotFav = () => {
+    return {
+        type: actionTypes.IS_NOT_FAV
+    }
+}
